@@ -1,0 +1,156 @@
+{
+  "global invariants" : [],
+
+  "instructions": [
+    {
+      "instruction" : "ADD",
+      "ready signal" : "#second_robexit#"// "start condition" : ["$decode$", "RTL.ctrl.imemresp_val && RTL.ctrl.imemresp_rdy == 1"]
+    },
+    {
+      "instruction" : "AND",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "OR",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "XOR",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SUB",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SLL",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SRL",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SRA",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SLT",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SLTU",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "ADDI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SLTI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SLTIU",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "ANDI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "ORI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "XORI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SLLI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SRLI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SRAI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "LUI",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "AUIPC",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "BEQ",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "BNE",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "BLT",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "BLTU",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "BGE",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "BGEU",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "JAL",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "JALR",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "LW",
+      "ready signal" : "#second_robexit#"// "start condition" : ["$decode$", "RTL.ctrl.imemresp_val && RTL.ctrl.imemresp_rdy == 1"]
+    },
+    {
+      "instruction" : "LH",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "LHU",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "LB",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "LBU",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SW",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SH",
+      "ready signal" : "#second_robexit#"
+    },
+    {
+      "instruction" : "SB",
+      "ready signal" : "#second_robexit#"
+    }
+
+  ]
+}
+
