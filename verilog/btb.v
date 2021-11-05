@@ -11,6 +11,11 @@ module btb(
            input wire [`ADDR_LEN-1:0]  jmpdst,
            input wire                  invalid2
            );
+(* keep *) wire hit_anyval;
+(* keep *) wire [`ADDR_LEN-1:0] jmpaddr_anyval;
+assign hit = hit_anyval;
+assign jmpaddr = jmpaddr_anyval;
+
 /*
    wire [`ADDR_LEN-1:0]           tag_data;
    reg [`BTB_IDX_NUM-1:0]         valid;
