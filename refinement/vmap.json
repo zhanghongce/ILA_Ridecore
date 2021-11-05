@@ -45,7 +45,7 @@
   },
 
   "rtl interface connection": {
-    "RESET" : "rst",
+    "RESET" : "reset",
     "CLOCK" : "clk"
   },
 
