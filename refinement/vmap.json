@@ -1,6 +1,6 @@
 {
   "state mapping": { 
-    "x0"        : [ ["decode", "pre_r0" ],["commit", "post_r0" ]],
+    "x0"        : "ILA.x0 == 0",
     "x1"        : [ ["decode", "pre_r1" ],["commit", "post_r1" ]],
     "x2"        : [ ["decode", "pre_r2" ],["commit", "post_r2" ]],
     "x3"        : [ ["decode", "pre_r3" ],["commit", "post_r3" ]],
@@ -58,14 +58,15 @@
     // "start |-> ", IF always valid
     "fetch_sel2 |-> (RTL.invalid2_pipe@decode == 1'b0)",
     "fetch_sel2 |-> (RTL.inv2_if@stage_IF == 1'b0)",
-    "fetch_sel2 |-> (RTL.inv2_id@stage_ID == 1'b0)"
+    "fetch_sel2 |-> (RTL.inv2_id@stage_ID == 1'b0)",
+    "( RTL.pc == RTL.pc##1 ) |-> ( RTL.idata == RTL.idata ## 1 )"
 
   ],
 
 
   "assumptions" :     [  "RTL.pc[1:0] == 0", 
-                         "RTL.illegal_instruction_1 == 0", 
-                         "RTL.illegal_instruction_2 == 0"
+                         "(decode || afterdecode ) |->  (RTL.illegal_instruction_1 == 0)", 
+                         "(decode || afterdecode ) |->  (RTL.illegal_instruction_2 == 0)"
                       ],
 
   "monitors":
@@ -84,7 +85,7 @@
        "ldst_rs_exit" : "stage_LDST_RS && ( ldstptr == RTL.issueent_ldst) && RTL.issue_ldst",
        "ldst_ex" : "ldst_rs_exit ##1",
        "ldst_res_back" : "ldst_ex ## 1",
-       "mem_en" : " (RTL.reserv_ldst.we1 || RTL.reserv_ldst.we2) @ stage_ID",
+       "mem_en" : " (fetch_sel2 ? RTL.reserv_ldst.we2 : RTL.reserv_ldst.we1) @ stage_ID",
        "second_robexit" : "stage_ROB_exited & RTL.rob.commit1"
       },
       "rules" : [
